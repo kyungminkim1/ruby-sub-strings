@@ -1,23 +1,26 @@
 # function substrings accepts two arguments: words (string)
 # and a dictionary (array)
 
-# set words to lowercase
-# split words and store in words array
-# for each substring element in dictionary: (use map method)
-    # set substring to lowercase
-# for each word in words array: (use tally method)
+    # set words to lowercase
+    # split words and store in words array
     # for each substring element in dictionary:
-        # check if word includes that substring
+        # set substring to lowercase
+    # for each word in words array:
+        # for each substring element in dictionary:
+            # check if word includes that substring
 
-# return hash with counts of substrings
+    # return hash with counts of substrings
 
 def substrings(words, dictionary)
-    counts = Hash.new(0)
     words_l = words.downcase
-    dictionary.select do |substring|
-        substring_l = substring.downcase
-        if words_l.include?(substring_l)
-            counts[substring_l] += 1
+    words_arr = words_l.split
+    dictionary = dictionary.map { |substring| substring.downcase }
+
+    counts = Hash.new(0)
+    dictionary.each do |substring|
+        substring_count = words_arr.count { |word| word.include?(substring) }
+        if substring_count != 0
+            counts[substring] = substring_count
         end
     end
     counts
