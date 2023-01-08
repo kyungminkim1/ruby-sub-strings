@@ -10,12 +10,12 @@
 
     # return counts
 
-def substrings(word, dictionary)
+def substrings(words, dictionary)
     counts = Hash.new(0)
-    word_l = word.downcase
+    words_l = words.downcase
     dictionary.select do |substring|
         substring_l = substring.downcase
-        if word_l.include?(substring_l)
+        if words_l.include?(substring_l)
             counts[substring_l] += 1
         end
     end
