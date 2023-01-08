@@ -1,14 +1,15 @@
-# function substrings accepts two arguments: a word (string)
+# function substrings accepts two arguments: words (string)
 # and a dictionary (array)
 
-# create empty hash 'counts' with argument 0
-# set word to lowercase
-# for each substring element in dictionary:
+# set words to lowercase
+# split words and store in words array
+# for each substring element in dictionary: (use map method)
     # set substring to lowercase
-    # check if word includes that substring
-        # add substring as key to counts
+# for each word in words array: (use tally method)
+    # for each substring element in dictionary:
+        # check if word includes that substring
 
-    # return counts
+# return hash with counts of substrings
 
 def substrings(words, dictionary)
     counts = Hash.new(0)
