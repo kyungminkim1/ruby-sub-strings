@@ -12,8 +12,7 @@
     # return hash with counts of substrings
 
 def substrings(words, dictionary)
-    words_l = words.downcase
-    words_arr = words_l.split
+    words_arr = words.downcase.split
     dictionary = dictionary.map { |substring| substring.downcase }
 
     counts = Hash.new(0)
